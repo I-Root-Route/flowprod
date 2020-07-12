@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+{% block content %}
+<div id="bd" class="border-left">
+<div id="search_result">
+    <div class="wrapr" id="artist">
+        <h1 id="h1tag">
+           How To Make Music Like {{artist}}
+        </h1>
+        <img src="{{artist_image}}" alt="{{artist}}">
+    </div>
+
+    <h1 style="text-align: center; font-family: fantasy;">{{artist}}</h1>
+
+      <h2 id="h2tag">Top Labels</h2>
+      <div class="box17">
+        <p>Labels and curators are  still very powerful and will help you a lot. Make sure you check these labels below!</p>
+        <p>Point</p>
+        <ul>
+          <li>Quite a few Labels and Curators approve only less than 1〜2% of all demo tracks</li>
+          <li>Before you submit your track, make sure it suits to the label or curator's taste</li>
+          <li>Sometimes you see the artist name in the list below, which generally means self release.</li>
+        </ul>
+      </div>
+      <ul id="label_list">
+        {% for label in labels %}
+        <li>
+          {{label[0]}}
+        </li>
+      {% endfor %}        
+      </ul>  
+
+      <h2 id="h2tag">YouTube Tutorial Videos</h2>
+      <div class="box17">
+        <p>There are so many high quiality YouTube tutorials. These videos will improve your music production a lot!</p>
+        <br>
+        <p>Note: If there is no YouTube tutorials about how to make {{artist}} style music, this 
+          section is blank
+        </p>
+      </div>
+
+
+      
+      <div class="text-center">
+      {% for video in video_ids %}
+      <iframe id="ytvideo" width="560" height="315"
+      src="https://www.youtube.com/embed/{{video}}" frameborder="5"
+      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+      </iframe>       
+      {% endfor %}
+      </div>
+  
+      <h2 id="h2tag">Here are {{artist}}'s Top Tracks</h2>
+      <div class="box17">
+        <ul>
+          <li>STEP1: Set a reference track</li>
+          <li>STEP2: Set your project's BPM</li>
+          <li>STEP3: Create chord progressions using the key of the reference track</li>
+          <li>POINT: You can change your Key and BPM through the production, but especially if you are beginner, you can also start working using the keys and BPMs from below and it will help you a lot!</li>
+        </ul>
+    </div>
+
+      {% for track,data in track_data.items() %}
+      <div id="data" class="div-wrapper-module--div--3YJv4 line-module--line--E_Jj4 css-preview-module--wrap--1Ra4X">
+        <div class="css-preview-module--div--z3lKL css-preview">
+            <div class="div-module--div--32boN" style="display:grid;grid-auto-rows:14rem;grid-template-columns:repeat(auto-fit, 16.5rem);grid-gap:2rem;justify-content:center">
+                <div id="data" class="div-module--div--32boN" style="width:16.5rem;height:14rem;padding:1.5em;transform:rotate(0deg);overflow:hidden;box-shadow:0 .25rem .25rem hsla(0, 0%, 0%, .1);background-image:linear-gradient(180deg, hsla(0, 0%, 45%, .1) 2rem, hsla(0, 100%, 100%, 0) 2.5rem), linear-gradient(180deg, rgba(205, 224, 168, 0.658), white);font-size:1.125rem;line-height:1.8">
+                  <p>{{track}}</p>
+                  <a href="{{data[3]}}">Listen on Spotify</a>
+                </div>
+                <div id="data" class="div-module--div--32boN" style="display:grid;grid-auto-columns:16.5rem;grid-template-rows:4rem;grid-gap:1rem">
+                    <div class="div-module--div--32boN" style="width:16.5rem;height:4rem;padding:1em 1.5em;transform:rotate(-1.5deg);overflow:hidden;box-shadow:.25rem 0 .25rem hsla(0, 0%, 0%, .1);background-image:linear-gradient(90deg, hsla(0, 0%, 45%, .1) 2rem, hsla(0, 100%, 100%, 0) 2.5rem), linear-gradient(90deg, hsla(15, 100%, 85%, 1), hsla(15, 100%, 85%, 1));font-size:1.125rem;line-height:1.8;white-space:nowrap;text-overflow:ellipsis">
+                            Key: {{data[0]}}
+                          </div>
+                    <div class="div-module--div--32boN" style="width:16.5rem;height:4rem;padding:1em 1.5em;transform:rotate(1deg);overflow:hidden;box-shadow:.25rem 0 .25rem hsla(0, 0%, 0%, .1);background-image:linear-gradient(90deg, hsla(0, 0%, 45%, .1) 2rem, hsla(0, 100%, 100%, 0) 2.5rem), linear-gradient(90deg, hsla(100, 100%, 85%, 1), hsla(100, 100%, 85%, 1));font-size:1.125rem;line-height:1.8;white-space:nowrap;text-overflow:ellipsis">
+                            BPM: {{data[1]}}
+                          </div>
+                    <div class="div-module--div--32boN" style="width:16.5rem;height:4rem;margin:0;padding:1em 1.5em;transform:rotate(-.5deg);overflow:hidden;box-shadow:.25rem 0 .25rem hsla(0, 0%, 0%, .1);background-image:linear-gradient(90deg, hsla(0, 0%, 45%, .1) 2rem, hsla(0, 100%, 100%, 0) 2.5rem), linear-gradient(90deg, hsla(60, 100%, 85%, 1), hsla(60, 100%, 85%, 1));font-size:1.125rem;line-height:1.8;white-space:nowrap;text-overflow:ellipsis">
+                            Track Popularity: {{data[2]}}
+                          </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+    <h2 id="h2tag">Chord Progressions</h2>
+    <div class="box17">
+      Important!: Chord Progressions on chordify.net are inaccurate sometimes. Very powerful tool though!
+    </div>
+    <div style="text-align: center;">
+      <button onclick="location.href='{{chordify_url}}'" id="cool">Check {{artist}} Chord Progressions</button>
+    </div>
+
+    <h2 id="h2tag">Samples and Presets</h2>
+    <div class="box17">
+      <p>Especially if you are beginner, Samplepacks and Presets are the most useful and important items to make music. If you are eager to make music like {{artist}},
+        I recommend you these Samples and Presets below!
+      </p>
+      <br>
+      <p>
+        Note: If you didn't search for a famous EDM or Pop artist, this section may be blank
+      </p>
+    </div>
+    <div style="text-align: center;">
+      <!--start button, nothing above this is necessary -->
+            {% if length >= 5 %}
+              {% for i in range(5) %}
+              <div class="svg-wrapper">
+                <svg height="80" width="300" xmlns="http://www.w3.org/2000/svg">
+                  <rect id="shape" height="80" width="300" />
+                  <div id="text">
+                    <a href="{{packs[i]['URL']}}"><span class="spot">{{packs[i]['Title']}}</span></a>
+                  </div>
+              </svg>
+              </div>
+              {% endfor %}
+            {% else %}
+            {% for pack in packs %}
+            <div class="svg-wrapper">
+              <svg height="80" width="300" xmlns="http://www.w3.org/2000/svg">
+                <rect id="shape" height="80" width="300" />
+                <div id="text">
+              <a href="{{pack['URL']}}"><span class="spot">{{pack['Title']}}</span></a>
+            </div>
+          </svg>
+        </div>
+            {% endfor %}
+            {% endif %}
+  
+  
+
+
+</div>
+</div>
+</div>
+
+{% endblock %}

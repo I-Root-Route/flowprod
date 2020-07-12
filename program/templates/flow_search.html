@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+<header id="search_engine" class="masthead">
+	<div class="d-flex justify-content-center h-100">
+		<div id="search_card" class="card">
+			<div class="card-header">
+				<h3>FlowProd - You don't need more googling</h3>
+			</div>
+			<div class="card-body">
+				<form method="POST">
+                    {# This hidden_tag is a CSRF security feature. #}
+                    {{ form.hidden_tag() }}
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-user"></i></span>
+						</div>
+						<input type="text" class="form-control" name="search_artist" placeholder="What is your favorite artist?">
+					<!--
+					</div>
+					<div class="form-group">
+					-->
+                         <input type="submit" name="search_result" value="Search" class="btn float-md-right login_btn">   
+                        
+					</div>
+					<p style="color: white; margin-top: 3vw;">Loading all data might take more than 10 seconds. Please be patient.</p><br>
+					<p style="color: white;">POINT: This website is suitable for EDM or Pop producers. You can get more data if you search for famous EDM or Pop artist</p>
+
+				</form>
+            </div>
+            
+		</div>
+	</div>
+</header>
+
+{% endblock %}

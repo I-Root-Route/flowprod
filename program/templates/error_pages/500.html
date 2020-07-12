@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="jumbotron">
+    <h1>Oops! some errors occured!</h1>
+    <ul>
+      <li>case1: In search form, you entered an artist name which does not exist on spotify database.</li>
+      <li>case2: registerで既に登録されているメールアドレス、ユーザー名を打ち込んだ為</li>
+      <li>case3: YouTube API quota/day reached 10,000</li>
+    </ul>
+  </div>
+{% endblock %}
