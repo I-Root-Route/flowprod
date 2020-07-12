@@ -17,7 +17,7 @@ def search():
     return render_template('/flow_search.html',form=form)
 
 
-@flow_search.route('/search-result/<artist_without_blank>',methods=['GET','POST'])
+@flow_search.route('/search-result/<artist_without_blank>')
 def result(artist_without_blank):
     artist_in_url = artist_without_blank.replace('&&',' ')
     artist = song_data.get_artist_name(str(artist_in_url))
