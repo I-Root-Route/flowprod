@@ -9,12 +9,12 @@ from collections import defaultdict
 import urllib.request as req
 import string
 
-Client_ID = '256368566032-p1aqvh1s0f822euf9ms2bhi6ja3vc7vv.apps.googleusercontent.com'
-Client_Secret = '7uSVZny44-axgjYsJ7l_2b0j'
-YOUTUBE_API_KEY = 'AIzaSyC-BPEes6HKE_60LYRkTOQoDd1CMmbah60'
+Client_ID = 'your Client_ID'
+Client_Secret = 'your secret key'
+YOUTUBE_API_KEY = 'your API key'
 
-spotify_client_id = '4f250c2eae36417598ce1fc6143bc27c'
-spotify_client_secret = '229f6c847400482cb219998358d4259c'
+spotify_client_id = 'your id'
+spotify_client_secret = 'your secret key'
 spotify_client_credentials_manager = spotipy.oauth2.SpotifyClientCredentials(spotify_client_id, spotify_client_secret)
 spotify = spotipy.Spotify(client_credentials_manager=spotify_client_credentials_manager)
 
