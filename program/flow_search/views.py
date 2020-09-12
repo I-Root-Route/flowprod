@@ -26,11 +26,11 @@ def result(artist_without_blank):
     track_data = song_data.show_results(artist)
     artist_popularity = song_data.get_artist_popularity(artist)
     labels = song_data.get_artist_copytights(artist)
-    packs = song_data.sample_packs_recommend(artist)
-    length = len(packs)
+    #packs = song_data.sample_packs_recommend(artist)
+    #length = len(packs)
     chordify_url = song_data.get_chord_progressions(artist)
     video_ids = song_data.youtube_tutorials(artist)
     return render_template('/search_result.html',artist=artist,genre=genre,
     track_data=track_data,artist_image=artist_image,
-    artist_popularity=artist_popularity,labels=labels,packs=packs,length=length,
+    artist_popularity=artist_popularity,labels=labels,#packs=packs,length=length,
     chordify_url=chordify_url,video_ids=video_ids)

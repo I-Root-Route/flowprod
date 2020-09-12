@@ -1,0 +1,40 @@
+    <h2 id="h2tag">Samples and Presets</h2>
+    <div class="box17">
+      <p>Especially if you are beginner, Samplepacks and Presets are the most useful and important items to make music. If you are eager to make music like {{artist}},
+        I recommend you these Samples and Presets below!
+      </p>
+      <br>
+      <p>
+        Note: If you didn't search for a famous EDM or Pop artist, this section may be blank
+      </p>
+    </div>
+    <div style="text-align: center;">
+
+            {% if length >= 5 %}
+              {% for i in range(5) %}
+              <div class="svg-wrapper">
+                <svg height="80" width="300" xmlns="http://www.w3.org/2000/svg">
+                  <rect id="shape" height="80" width="300" />
+                  <div id="text">
+                    <a href="{{packs[i]['URL']}}"><span class="spot">{{packs[i]['Title']}}</span></a>
+                  </div>
+              </svg>
+              </div>
+              {% endfor %}
+            {% else %}
+            {% for pack in packs %}
+            <div class="svg-wrapper">
+              <svg height="80" width="300" xmlns="http://www.w3.org/2000/svg">
+                <rect id="shape" height="80" width="300" />
+                <div id="text">
+              <a href="{{pack['URL']}}"><span class="spot">{{pack['Title']}}</span></a>
+            </div>
+          </svg>
+        </div>
+            {% endfor %}
+            {% endif %}
+    
+  
+
+
+</div>

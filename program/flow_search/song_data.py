@@ -142,7 +142,7 @@ def get_artist_name(name):
     artist_name = artist_items['name']
     return artist_name
 
-
+"""
 def sample_packs_recommend(name):
     spotapi_out = spotify.search(q=name, type='artist')
     artist_items = spotapi_out['artists']['items'][0]
@@ -171,7 +171,7 @@ def sample_packs_recommend(name):
     
     return to_dict
 
-
+"""
 
 def get_chord_progressions(name):
     spotapi_out = spotify.search(q=name, type='artist')
